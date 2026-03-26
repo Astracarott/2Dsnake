@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Snake Game</h1>
+        <div class="info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="high-score">High Score: <span id="highScore">0</span></div>
+            <div class="timer">Time: <span id="timer">0</span>s</div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls">
+            <p id="gameStatus">Use arrow keys to move</p>
+            <button id="startBtn" class="btn">Start Game</button>
+            <button id="resetBtn" class="btn">Stop</button>
+            <button id="settingsBtn" class="btn btn-settings">Settings</button>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Control Settings</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="control-setting">
+                    <label>Move Up:</label>
+                    <button class="control-btn" id="upBtn">Press a key...</button>
+                    <span class="key-display" id="upDisplay">↑</span>
+                </div>
+                <div class="control-setting">
+                    <label>Move Down:</label>
+                    <button class="control-btn" id="downBtn">Press a key...</button>
+                    <span class="key-display" id="downDisplay">↓</span>
+                </div>
+                <div class="control-setting">
+                    <label>Move Left:</label>
+                    <button class="control-btn" id="leftBtn">Press a key...</button>
+                    <span class="key-display" id="leftDisplay">←</span>
+                </div>
+                <div class="control-setting">
+                    <label>Move Right:</label>
+                    <button class="control-btn" id="rightBtn">Press a key...</button>
+                    <span class="key-display" id="rightDisplay">→</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="defaultControlsBtn" class="btn btn-default">Reset to Default</button>
+                <button id="closeSettingsBtn" class="btn btn-close">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
