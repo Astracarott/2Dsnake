@@ -312,24 +312,23 @@ function draw() {
     
     // Draw snake
     snake.forEach((segment, index) => {
-        if (index === 0) {
-            // Head
-            if (godMode) {
-                ctx.fillStyle = '#FFD700';  // Gold color for god mode
-                ctx.shadowColor = '#FFD700';
-            } else {
-                ctx.fillStyle = '#00FF00';
-                ctx.shadowColor = '#00FF00';
-            }
+        if (godMode) {
+            // Rainbow colors cycling through the snake segments
+            const rainbowColors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+            ctx.fillStyle = rainbowColors[index % rainbowColors.length];
+            ctx.shadowColor = rainbowColors[index % rainbowColors.length];
             ctx.shadowBlur = 10;
         } else {
-            // Body
-            if (godMode) {
-                ctx.fillStyle = '#FFA500';  // Orange for god mode
+            if (index === 0) {
+                // Head
+                ctx.fillStyle = '#00FF00';
+                ctx.shadowColor = '#00FF00';
+                ctx.shadowBlur = 10;
             } else {
+                // Body
                 ctx.fillStyle = '#00CC00';
+                ctx.shadowColor = 'transparent';
             }
-            ctx.shadowColor = 'transparent';
         }
         ctx.fillRect(
             segment.x * gridSize + 1,
